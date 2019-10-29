@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Entity
@@ -12,11 +13,11 @@ public class Project {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true)
-    @NotBlank(message = "Project code is mandatory")
+    @NotNull(message = "Project code is mandatory")
+    @Column(unique = true, length = 32)
     private String code;
 
-    @NotBlank(message = "Project title is mandatory")
+    @NotNull(message = "Project title is mandatory")
     private String title;
 
     private String description;

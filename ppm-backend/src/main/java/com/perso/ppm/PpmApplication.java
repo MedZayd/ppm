@@ -27,7 +27,7 @@ public class PpmApplication implements CommandLineRunner {
 		Date deadline = new SimpleDateFormat("dd/MM/yyyy").parse("20/11/2019");
 
 		Project project = projectRepository.save(new Project("PPM", "Personal Project Management Tool",
-				"Project developped with spring boot & react js", new Date(), deadline));
+				"Project developed with spring boot & react js", new Date(), deadline));
 
 		List<Project> projects = projectRepository.findAll();
 		for(Project p : projects) {
